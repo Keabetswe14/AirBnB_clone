@@ -50,11 +50,11 @@ class HBNBCommand(cmd.Cmd):
     }
 
     def emptyline(self):
-        """Do nothing upon receiving empty line."""
+        """Do nothing upon receiving an empty line."""
         pass
 
     def default(self, arg):
-        """Default behavior for cmd module when input invalid"""
+        """Default behavior for cmd module when input is invalid"""
         argdict = {
             "all": self.do_all,
             "show": self.do_show,
@@ -85,7 +85,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, arg):
         """Usage: create <class>
-        Create new class instance and print its id.
+        Create a new class instance and print its id.
         """
         argl = parse(arg)
         if len(argl) == 0:
@@ -148,7 +148,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_count(self, arg):
         """Usage: count <class> or <class>.count()
-        Retrieve number of instances of given class."""
+        Retrieve the number of instances of a given class."""
         argl = parse(arg)
         count = 0
         for obj in storage.all().values():
